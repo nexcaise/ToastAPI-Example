@@ -2,7 +2,7 @@
 
 A minimal example demonstrating how to use **ToastAPI** from a native Minecraft Bedrock mod.
 
-This project shows how a native shared library can call `ToastAPI` to display an Android Toast message from inside Minecraft Bedrock. The example also demonstrates integrating ToastAPI with the **Preloader** hook system.
+This project shows how a native shared library can call `ToastAPI` to create & show a Minecraft Toast message from inside Minecraft Bedrock. The example also demonstrates integrating ToastAPI with the **Preloader** hook system.
 
 ## Features
 
