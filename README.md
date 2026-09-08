@@ -2,12 +2,11 @@
 
 A minimal example demonstrating how to use **ToastAPI** from a native Minecraft Bedrock mod.
 
-This project shows how a native shared library can call `ToastAPI` to create & show a Minecraft Toast message from inside Minecraft Bedrock. The example also demonstrates integrating ToastAPI with the **Preloader** hook system.
+This project shows how a native shared library can call `ToastAPI` to create & show a Minecraft Toast message.
 
 ## Features
 
 - Native C++20 Minecraft Bedrock mod
-- Android Toast notifications through ToastAPI
 - Preloader-based native hooking
 - ARM64 (`arm64-v8a`) support
 - CMake-based build system
@@ -161,31 +160,6 @@ void onUnload() {
 
 The implementation is provided in `src/main.cpp`.
 
-## Linking
-
-`ToastAPI-Example` links against:
-
-- `libToastAPI.so`
-- `libpreloader.so`
-- `libdl`
-
-The project intentionally does not link directly against `libandroid.so`. ToastAPI accesses Android's Asset Manager through dynamic symbol lookup and Preloader detours.
-
-## Build Configuration
-
-The release build is optimized for a small native library. It uses options such as:
-
-- ThinLTO
-- Function and data sectioning
-- Hidden symbol visibility
-- Section garbage collection
-- Identical code folding
-- Symbol stripping
-- RELRO
-- Immediate symbol binding
-
-The project also targets Android's 16 KiB maximum page size through the linker configuration.
-
 ## Custom Toast Messages
 
 Once ToastAPI is available, a mod can use it to provide user-facing runtime notifications such as:
@@ -197,7 +171,7 @@ nexcaise::toastapi::sendToastMessage("Feature enabled");
 nexcaise::toastapi::sendToastMessage("Feature disabled");
 ```
 
-This can be useful for mod status messages, feature feedback, configuration events, and other notifications that should be visible directly to the player.
+This can be useful for mod status messages, feature feedback, configuration events, and other notifications.
 
 ## Dependencies
 
@@ -222,7 +196,7 @@ See [`LICENSE`](LICENSE) for the complete license text.
 
 **ToastAPI**
 
-ToastAPI provides the native interface used by this example to display Android Toast messages from Minecraft Bedrock native code.
+ToastAPI provides the native interface used by this example to create & show Minecraft Toast messages.
 
 ---
 
