@@ -1,0 +1,2 @@
+Modified by AlvinQID. for bring back hook macros
+original: https://github.com/LiteLDev/preloader-android
